@@ -1,3 +1,6 @@
+include(../qmake-target-platform.pri)
+include(../qmake-destination-path.pri)
+
 QT += testlib
 QT -= gui
 
@@ -11,3 +14,6 @@ INCLUDEPATH += source
 
 SOURCES += \
     source/models/client-tests.cpp
+
+LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
+

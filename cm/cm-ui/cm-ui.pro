@@ -1,3 +1,6 @@
+include(../qmake-target-platform.pri)
+include(../qmake-destination-path.pri)
+
 QT += qml quick
 
 TEMPLATE = app
@@ -17,7 +20,8 @@ SOURCES += \
 RESOURCES += \
     views.qrc
 
-LIBS +=  -L$$PWD/../../build-cm-Desktop_Qt_5_12_9_MSVC2015_64bit-Debug/cm-lib/debug -lcm-lib
+LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
+
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH = $$PWD
